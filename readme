@@ -1,1 +1,36 @@
 
+# Privacy-First Health Assistant (Gemma Edge)
+
+This application provides a secure, natural language interface for managing and interpreting health information. By leveraging "Edge AI" via the **Gemma 2 2B** model, all data processing occurs within your isolated runtime environment, ensuring that sensitive medical records never leave your control.
+
+## ✨ Key Application Features
+- **Private Medical Insights**: Query symptoms, medication interactions, or general health advice without your data being used for model training.
+- **Natural Language Logging**: Maintain health logs (e.g., "Logged blood pressure 120/80 at 9 AM") through an intuitive chat interface.
+- **Edge Intelligence**: High-speed reasoning provided by Google's latest 2-billion parameter model, optimized for immediate local response.
+- **Zero-Data Leakage**: Unlike traditional AI assistants, this architecture does not transmit your prompts to external servers for processing.
+
+## 👥 Target Users
+- **Privacy-Conscious Patients**: Individuals who want to use AI to track their health journey without sacrificing the confidentiality of their medical history.
+- **Caregivers**: Those managing complex medication schedules and health metrics for family members who need a simple way to organize information.
+- **Health Professionals**: Users looking for a sandbox environment to test medical query processing using state-of-the-art open models in a controlled setting.
+
+## 🛡️ Local Maintenance & Data Safety
+Maintaining health records "at the edge" offers a level of safety that cloud-based services cannot match:
+
+### 1. Data Sovereignty
+In this Google Colab environment, your data exists only within the volatile memory (RAM) of your specific virtual machine. Once the session is closed, the data is wiped, ensuring no permanent digital footprint of your health queries exists on a central server.
+
+### 2. Local-Only Execution
+Because we load the model weights directly into the T4 GPU, the "thinking" happens locally. There is no API call to a central provider (like OpenAI or Anthropic), which eliminates the risk of data intercepts or provider-side data breaches.
+
+### 3. Secure Credential Management
+By utilizing **Colab Secrets**, your Hugging Face authentication remains encrypted and is never hard-coded into the application, maintaining a professional security standard for your workspace.
+
+## 🚀 Quick Start
+To maintain your privacy while using this tool:
+1. Load your `HF_TOKEN` into the Colab Secrets (Key Icon).
+2. Run the `app.py` script.
+3. Interact with the Assistant via the local or public tunnel provided by Gradio.
+
+---
+*Disclaimer: This tool is intended for informational purposes and record-keeping support. It is not a substitute for professional medical advice, diagnosis, or treatment.*
